@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         run: |
           repo=`pwd`
-          cd/
+          cd /
           PATH=$PATH:/home/runner/.local/bin
           python -m pip install --upgrade pip
           pip install flake8 pytest black
