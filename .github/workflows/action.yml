@@ -17,8 +17,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          PATH=$PATH:/home/runner/.local/bin
       - name: Run black
-        uses: RojerGS/python-black-check@master 
+        run: black .
       - name: install package
         run: |
           cd src && pip install .
