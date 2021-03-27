@@ -3,13 +3,9 @@ name: Python package
 on: [push]
 
 jobs:
-
-  setup:
-    runs-on: ubuntu-latest
-
   build:
 
-    needs: setup
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: [3.7, 3.8]
@@ -36,7 +32,7 @@ jobs:
       run: |
         pytest
   format:
-
+  
     needs: build
     runs-on: ubuntu-latest
     steps:
