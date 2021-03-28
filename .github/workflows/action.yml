@@ -29,8 +29,7 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
-      run: |
-        pytest
+      run: pytest
   format:
 
     needs: build
@@ -72,8 +71,7 @@ jobs:
         cd src
         pip install .
     - name: build docs
-      run: |
-        pdoc3 --html usaspending
+      run: pdoc3 --html usaspending
     - name: deploy
       uses: JamesIves/github-pages-deploy-action@4.1.0
       with:
