@@ -55,7 +55,7 @@ jobs:
             git commit -am "fixup: Format Python code with Black"
             git push
         fi
-    build-and-deploy:
+  build-and-deploy:
     needs: format
     runs-on: ubuntu-latest
     steps:
